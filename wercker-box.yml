@@ -21,6 +21,7 @@ script: |
   echo 'stop on shutdown' >> etcd.conf
   echo 'exec /usr/bin/etcd -addr 0.0.0.0:4001 -data-dir /var/lib/etcd -name node0' >> etcd.conf
   sudo mv etcd.conf /etc/init/etcd.conf
+  sudo apt-get install mysql-client
 env:
   WERCKER_ETCD_HOST: $$HOST$$
   WERCKER_ETCD_PORT: 4001
